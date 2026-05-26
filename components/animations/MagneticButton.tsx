@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { motion, useMotionValue, useSpring } from "framer-motion";
 import { useRef, type ReactNode, type MouseEvent } from "react";
 
 interface MagneticButtonProps {
@@ -22,19 +22,18 @@ export default function MagneticButton({
   const x = useMotionValue(0);
   const y = useMotionValue(0);
 
-  const springConfig = { damping: 15, stiffness: 150, mass: 0.1 };
-  const springX = useSpring(x, springConfig);
-  const springY = useSpring(y, springConfig);
+  // Restrained magnetic follow — damped enough to feel deliberate, not frantic
+  const positionSpring = { damping: 20, stiffness: 200, mass: 0.15 };
+  const springX = useSpring(x, positionSpring);
+  const springY = useSpring(y, positionSpring);
 
   const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
     if (!ref.current) return;
     const rect = ref.current.getBoundingClientRect();
     const centerX = rect.left + rect.width / 2;
     const centerY = rect.top + rect.height / 2;
-    const deltaX = (e.clientX - centerX) * strength;
-    const deltaY = (e.clientY - centerY) * strength;
-    x.set(deltaX);
-    y.set(deltaY);
+    x.set((e.clientX - centerX) * strength);
+    y.set((e.clientY - centerY) * strength);
   };
 
   const handleMouseLeave = () => {
@@ -42,15 +41,15 @@ export default function MagneticButton({
     y.set(0);
   };
 
-  /* Scale transform on hover */
+  // Crisp scale spring — press and release feels tactile
   const scale = useMotionValue(1);
-  const springScale = useSpring(scale, { damping: 20, stiffness: 300 });
+  const scaleSpring = useSpring(scale, { damping: 25, stiffness: 350, mass: 0.1 });
 
   return (
     <motion.div
       ref={ref}
       className={`magnetic-wrap ${className}`}
-      style={{ x: springX, y: springY, scale: springScale }}
+      style={{ x: springX, y: springY, scale: scaleSpring }}
       onMouseMove={handleMouseMove}
       onMouseLeave={() => {
         handleMouseLeave();

@@ -211,7 +211,13 @@ html.lenis, html.lenis body {
   display: inline-flex;
 }
 
-/* Blinking cursor for typewriter */
+/* Organic cursor blink — breathing pulse, not mechanical toggle */
+@keyframes cursor-breathe {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.08; }
+}
+
+/* Legacy blink kept for backward compat */
 @keyframes blink {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
@@ -219,7 +225,7 @@ html.lenis, html.lenis body {
 
 .cursor-blink::after {
   content: '|';
-  animation: blink 1s ease-in-out infinite;
+  animation: cursor-breathe 1.4s cubic-bezier(0.45, 0, 0.55, 1) infinite;
   color: var(--color-accent);
   font-weight: 300;
   margin-left: 1px;
@@ -239,4 +245,34 @@ html.lenis, html.lenis body {
 .nav-blur {
   backdrop-filter: blur(12px) saturate(180%);
   -webkit-backdrop-filter: blur(12px) saturate(180%);
+}
+
+/* Shimmer loading skeleton */
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.skeleton-shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--color-surface-alt) 25%,
+    var(--color-border-soft) 50%,
+    var(--color-surface-alt) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+/* Scroll progress bar */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  z-index: 60;
+  background-color: var(--color-accent);
+  opacity: 0.6;
+  transform-origin: left;
 }

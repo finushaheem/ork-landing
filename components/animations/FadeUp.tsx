@@ -13,15 +13,15 @@ interface FadeUpProps {
   ease?: Transition["ease"];
 }
 
-
 export default function FadeUp({
   children,
   delay = 0,
-  duration = 0.6,
+  duration = 0.55,
   y = 24,
   className = "",
   once = true,
-  ease = [0.25, 0.1, 0.25, 1.0],
+  // CINEMATIC ease: explosive start, extended graceful deceleration
+  ease = [0.16, 1, 0.3, 1],
 }: FadeUpProps) {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once, margin: "-80px" });
@@ -29,13 +29,9 @@ export default function FadeUp({
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y }}
-      transition={{
-        duration,
-        delay,
-        ease,
-      }}
+      initial={{ opacity: 0, y, scale: 0.98 }}
+      animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y, scale: 0.98 }}
+      transition={{ duration, delay, ease }}
       className={className}
     >
       {children}

@@ -3,6 +3,7 @@ import { Inter, JetBrains_Mono } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import { LenisProvider } from "@/components/providers/LenisProvider";
+import { MotionProvider } from "@/components/providers/MotionProvider";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -73,7 +74,9 @@ export default function RootLayout({
       className={`${inter.variable} ${jetbrainsMono.variable} ${instrumentSerif.variable}`}
     >
       <body>
-        <LenisProvider>{children}</LenisProvider>
+        <MotionProvider>
+          <LenisProvider>{children}</LenisProvider>
+        </MotionProvider>
       </body>
     </html>
   );

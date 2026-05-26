@@ -12,7 +12,8 @@ export function LenisProvider({ children }: { children: React.ReactNode }) {
       easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: "vertical",
       smoothWheel: true,
-      touchMultiplier: 1,
+      wheelMultiplier: 0.9,  // slightly slower wheel — more cinematic pacing
+      touchMultiplier: 1.0,  // native touch physics on mobile
     });
 
     lenisRef.current = lenis;

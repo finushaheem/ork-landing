@@ -42,15 +42,16 @@ export default function StaggerChildren({
   );
 }
 
-/* Child item variant — use this on direct children inside StaggerChildren */
+/* Child item variant — use on direct children inside StaggerChildren */
 export const staggerItem = {
-  hidden: { opacity: 0, y: 24 },
+  hidden: { opacity: 0, y: 24, scale: 0.98 },
   visible: {
     opacity: 1,
     y: 0,
+    scale: 1,
     transition: {
-      duration: 0.6,
-      ease: [0.25, 0.1, 0.25, 1.0] as const,
+      duration: 0.55,
+      ease: [0.16, 1, 0.3, 1] as const, // CINEMATIC
     },
   },
 } as const;
