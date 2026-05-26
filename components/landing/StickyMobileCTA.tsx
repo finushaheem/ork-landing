@@ -44,9 +44,7 @@ export default function StickyMobileCTA() {
           }}
           aria-label="Start thinking — open ork"
         >
-          {/* Short label on small screens, fuller text on wider mobile */}
-          <span className="xs:hidden">→</span>
-          <span className="hidden xs:inline">Start thinking →</span>
+          Start thinking →
         </motion.a>
       )}
     </AnimatePresence>
