@@ -40,9 +40,7 @@ function AppleIcon() {
       strokeLinejoin="round"
       aria-hidden="true"
     >
-      {/* Leaf */}
       <path d="M10 1.5c-1.5 0-2 1.5-2 1.5s1.5-.2 2.5-1.2" />
-      {/* Apple body */}
       <path d="M5.5 5C3.5 5 2 7.5 2 10c0 2.8 1.8 4.5 3.5 4.5 .8 0 1.5-.4 2.5-.4s1.7.4 2.5.4C12.2 14.5 14 12.8 14 10c0-2.5-1.5-5-3.5-5-1 0-1.7.5-2.5.5S6.5 5 5.5 5z" />
     </svg>
   );
@@ -72,12 +70,26 @@ export default function ClosingCTA() {
   return (
     <section
       id="cta"
-      className="min-h-[80vh] flex items-center justify-center"
+      className="min-h-svh flex items-center justify-center"
+      style={{ backgroundColor: "var(--color-ink)" }}
     >
       <div className="max-w-3xl mx-auto px-6 text-center">
+
+        {/* ── Decorative rule ── */}
+        <FadeUp duration={0.6} ease={cinematicEase}>
+          <div
+            className="w-8 h-px mx-auto mb-16"
+            style={{ backgroundColor: "hsl(38, 8%, 24%)" }}
+            aria-hidden="true"
+          />
+        </FadeUp>
+
         {/* ── Headline ── */}
-        <FadeUp duration={0.8} ease={cinematicEase}>
-          <h2 className="font-serif text-5xl md:text-6xl lg:text-7xl leading-[1.05] tracking-[-0.03em] text-[var(--color-ink)] mb-6">
+        <FadeUp duration={0.9} ease={cinematicEase} delay={0.05}>
+          <h2
+            className="font-serif text-5xl md:text-6xl lg:text-7xl leading-[1.05] tracking-[-0.03em] mb-6"
+            style={{ color: "hsl(40, 20%, 93%)" }}
+          >
             Your mind deserves
             <br />
             a better home.
@@ -86,16 +98,19 @@ export default function ClosingCTA() {
 
         {/* ── Subhead ── */}
         <FadeUp delay={0.2}>
-          <p className="font-sans text-lg md:text-xl text-[var(--color-ink-soft)] mb-12">
+          <p
+            className="font-sans text-lg md:text-xl mb-12 leading-relaxed"
+            style={{ color: "hsl(38, 8%, 55%)" }}
+          >
             Free to begin. No setup, no friction, no card required.
           </p>
         </FadeUp>
 
-        {/* ── CTA Button ── */}
+        {/* ── CTA Button — the one accent moment on the page ── */}
         <FadeUp delay={0.35}>
           <MagneticButton id="cta-button">
             <button
-              className="bg-[var(--color-ink)] text-white rounded-full px-10 py-4 text-lg font-medium hover:bg-[var(--color-ink-soft)] transition-colors cta-pulse cursor-pointer"
+              className="cta-accent-btn cta-pulse rounded-full px-10 py-4 text-lg font-medium cursor-pointer"
             >
               Begin →
             </button>
@@ -104,13 +119,17 @@ export default function ClosingCTA() {
 
         {/* ── Platform info ── */}
         <FadeUp delay={0.5}>
-          <p className="mt-8 text-sm text-[var(--color-ink-muted)] flex items-center justify-center gap-2">
+          <p
+            className="mt-8 text-sm flex items-center justify-center gap-2"
+            style={{ color: "hsl(38, 8%, 38%)" }}
+          >
             <GlobeIcon />
             <AppleIcon />
             <PlayStoreIcon />
-            Available on Web, iOS, and Android
+            <span>Available on Web, iOS, and Android</span>
           </p>
         </FadeUp>
+
       </div>
     </section>
   );

@@ -2,69 +2,59 @@ export default function Footer() {
   return (
     <footer
       id="footer"
-      className="border-t border-[var(--color-border-soft)] py-12 md:py-16"
+      className="py-12 md:py-16"
+      style={{
+        backgroundColor: "var(--color-ink)",
+        borderTop: "1px solid hsl(34, 8%, 16%)",
+      }}
     >
       <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+
         {/* Left — Logo & Copyright */}
         <div>
-          <span className="font-serif text-xl text-[var(--color-ink)]">
+          <span
+            className="font-serif text-xl"
+            style={{ color: "hsl(40, 20%, 88%)" }}
+          >
             ork.
           </span>
-          <p className="text-xs text-[var(--color-ink-muted)] mt-1">
+          <p
+            className="text-xs mt-1"
+            style={{ color: "hsl(38, 8%, 36%)" }}
+          >
             © 2026 ork.so
           </p>
         </div>
 
         {/* Center — Links */}
         <nav className="flex flex-wrap gap-x-8 gap-y-2">
-          <a
-            id="footer-about"
-            href="#"
-            className="text-sm text-[var(--color-ink-muted)] hover:text-[var(--color-ink)] transition-colors"
-          >
-            About
-          </a>
-          <a
-            id="footer-blog"
-            href="#"
-            className="text-sm text-[var(--color-ink-muted)] hover:text-[var(--color-ink)] transition-colors"
-          >
-            Blog
-          </a>
-          <a
-            id="footer-privacy"
-            href="#"
-            className="text-sm text-[var(--color-ink-muted)] hover:text-[var(--color-ink)] transition-colors"
-          >
-            Privacy
-          </a>
-          <a
-            id="footer-terms"
-            href="#"
-            className="text-sm text-[var(--color-ink-muted)] hover:text-[var(--color-ink)] transition-colors"
-          >
-            Terms
-          </a>
-          <a
-            id="footer-twitter"
-            href="#"
-            className="text-sm text-[var(--color-ink-muted)] hover:text-[var(--color-ink)] transition-colors"
-          >
-            Twitter
-          </a>
-          <a
-            id="footer-contact"
-            href="#"
-            className="text-sm text-[var(--color-ink-muted)] hover:text-[var(--color-ink)] transition-colors"
-          >
-            Contact
-          </a>
+          {[
+            { id: "footer-about",   label: "About"   },
+            { id: "footer-blog",    label: "Blog"    },
+            { id: "footer-privacy", label: "Privacy" },
+            { id: "footer-terms",   label: "Terms"   },
+            { id: "footer-twitter", label: "Twitter" },
+            { id: "footer-contact", label: "Contact" },
+          ].map(({ id, label }) => (
+            <a
+              key={id}
+              id={id}
+              href="#"
+              className="text-sm link-dark"
+            >
+              {label}
+            </a>
+          ))}
         </nav>
 
         {/* Right — Tagline */}
-        <span className="font-serif text-sm text-[var(--color-ink-muted)] italic">
+        <span
+          className="font-serif text-sm italic"
+          style={{ color: "hsl(38, 8%, 32%)" }}
+        >
           For those who think
         </span>
+
       </div>
     </footer>
   );

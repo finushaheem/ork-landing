@@ -14,9 +14,10 @@
   --color-surface-elevated: hsl(40, 18%, 99%);
   --color-border: hsl(35, 10%, 90%);
   --color-border-soft: hsl(35, 8%, 93%);
-  --color-accent: hsl(28, 45%, 52%);
-  --color-accent-soft: hsl(28, 40%, 92%);
-  --color-accent-glow: hsl(28, 45%, 52%, 0.15);
+  --color-accent: hsl(38, 65%, 48%);
+  --color-accent-hover: hsl(38, 70%, 41%);
+  --color-accent-soft: hsl(38, 60%, 93%);
+  --color-accent-glow: hsl(38, 65%, 48%, 0.18);
   --color-shadow: hsl(30, 10%, 10%, 0.04);
   --color-shadow-md: hsl(30, 10%, 10%, 0.06);
 
@@ -250,6 +251,29 @@ html.lenis, html.lenis body {
 .nav-blur {
   backdrop-filter: blur(12px) saturate(180%);
   -webkit-backdrop-filter: blur(12px) saturate(180%);
+}
+
+/* Accent CTA button — used in ClosingCTA (the one accent moment on the page) */
+.cta-accent-btn {
+  background-color: var(--color-accent);
+  color: white;
+  transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.075s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.cta-accent-btn:hover {
+  background-color: var(--color-accent-hover);
+}
+.cta-accent-btn:active {
+  transform: scale(0.97);
+}
+
+/* Dark section links — Footer and ClosingCTA */
+.link-dark {
+  color: hsl(38, 8%, 42%);
+  transition: color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.link-dark:hover {
+  color: hsl(40, 20%, 88%);
 }
 
 /* Shimmer loading skeleton */
