@@ -6,10 +6,11 @@ import StaggerChildren, {
 } from "@/components/animations/StaggerChildren";
 
 const phrases = [
-  "We built ork for the way your mind actually works — ",
-  "not in folders and databases, ",
-  "but in feelings, fragments, ",
-  "and flashes of clarity.",
+  "Thinking doesn’t happen in bullet points. ",
+  "It happens in glimpses — ",
+  "half-formed at 2am, ",
+  "connecting mid-sentence, ",
+  "arriving before you’re ready.",
 ];
 
 export default function Manifesto() {
@@ -42,7 +43,7 @@ export default function Manifesto() {
           transition={{ duration: 0.6, delay: 0.7, ease: [0.25, 0.1, 0.25, 1.0] as const }}
           className="mt-12 text-sm text-[var(--color-ink-muted)] italic font-sans"
         >
-          — The ork philosophy
+          — What ork was built for
         </motion.p>
       </div>
     </section>

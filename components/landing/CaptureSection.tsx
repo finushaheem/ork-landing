@@ -48,8 +48,8 @@ export default function CaptureSection() {
 
             <FadeUp y={30} delay={0.2}>
               <p className="font-sans text-lg text-[var(--color-ink-soft)] leading-relaxed">
-                No titles. No folders. No friction. Just open ork and write.
-                Your thoughts find their place.
+                No categories. No friction. No thinking about where things go.
+                Open ork, write — and trust the space to hold it.
               </p>
             </FadeUp>
           </div>

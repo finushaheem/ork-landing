@@ -78,14 +78,16 @@ export default function ClosingCTA() {
         {/* ── Headline ── */}
         <FadeUp duration={0.8} ease={cinematicEase}>
           <h2 className="font-serif text-5xl md:text-6xl lg:text-7xl leading-[1.05] tracking-[-0.03em] text-[var(--color-ink)] mb-6">
-            Begin thinking clearly.
+            Your mind deserves
+            <br />
+            a better home.
           </h2>
         </FadeUp>
 
         {/* ── Subhead ── */}
         <FadeUp delay={0.2}>
           <p className="font-sans text-lg md:text-xl text-[var(--color-ink-soft)] mb-12">
-            ork is free to start. No credit card required.
+            Free to begin. No setup, no friction, no card required.
           </p>
         </FadeUp>
 
@@ -95,7 +97,7 @@ export default function ClosingCTA() {
             <button
               className="bg-[var(--color-ink)] text-white rounded-full px-10 py-4 text-lg font-medium hover:bg-[var(--color-ink-soft)] transition-colors cta-pulse cursor-pointer"
             >
-              Create your space →
+              Begin →
             </button>
           </MagneticButton>
         </FadeUp>

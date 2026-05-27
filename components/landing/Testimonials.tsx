@@ -24,8 +24,8 @@ export default function Testimonials() {
         {/* Main quote */}
         <FadeUp delay={0.15}>
           <blockquote className="font-serif text-2xl md:text-3xl lg:text-4xl leading-[1.3] tracking-[-0.02em] text-[var(--color-ink)]">
-            ork replaced four apps for me. Not because it does more — because it
-            understands how I think.
+            I&apos;ve tried every note app, every task manager. ork is the first one
+            that actually felt like me.
           </blockquote>
         </FadeUp>
 
@@ -37,11 +37,11 @@ export default function Testimonials() {
               aria-hidden="true"
             >
               <span className="text-sm font-medium text-[var(--color-ink-muted)]">
-                AK
+                PR
               </span>
             </div>
             <span className="font-sans font-medium text-base text-[var(--color-ink)]">
-              Arjun Kapoor
+              Priya R.
             </span>
             <span className="font-sans text-sm text-[var(--color-ink-muted)]">
               Product Designer
@@ -60,8 +60,8 @@ export default function Testimonials() {
         {/* Quote */}
         <FadeUp>
           <blockquote className="font-serif text-xl md:text-2xl leading-[1.3] text-[var(--color-ink-soft)] italic">
-            I stopped taking notes. Now I just think out loud, and ork does the
-            rest.
+            There&apos;s something about writing in ork. It&apos;s slower.
+            More like thinking.
           </blockquote>
         </FadeUp>
 
@@ -73,14 +73,14 @@ export default function Testimonials() {
               aria-hidden="true"
             >
               <span className="text-sm font-medium text-[var(--color-ink-muted)]">
-                MC
+                JW
               </span>
             </div>
             <span className="font-sans font-medium text-sm text-[var(--color-ink)]">
-              Maya Chen
+              James W.
             </span>
             <span className="font-sans text-sm text-[var(--color-ink-muted)]">
-              Writer &amp; Essayist
+              Writer
             </span>
           </div>
         </FadeUp>

@@ -112,23 +112,23 @@ const features = [
   {
     id: "feature-think",
     icon: <IconMindMap />,
-    title: "Connect ideas",
+    title: "Everything connects",
     description:
-      "Thoughts link to each other. ork builds your web of thinking — automatically.",
+      "Your thoughts don't exist in isolation. ork builds the web of meaning between them, quietly, in the background.",
   },
   {
     id: "feature-write",
     icon: <IconPen />,
-    title: "Publish instantly",
+    title: "Think out loud",
     description:
-      "Turn any thought into a micro-blog. Share your thinking with one tap.",
+      "Turn any thought into something shareable. Not a newsletter, not a post — just your thinking, made visible.",
   },
   {
     id: "feature-do",
     icon: <IconCheckbox />,
-    title: "Act with context",
+    title: "Act with memory",
     description:
-      "Every task carries the thought that created it. Never lose the why.",
+      "Every task carries the full thought that created it. When you return to it, you'll remember why it mattered.",
   },
 ] as const;
 

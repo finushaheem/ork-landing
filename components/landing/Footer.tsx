@@ -63,7 +63,7 @@ export default function Footer() {
 
         {/* Right — Tagline */}
         <span className="font-serif text-sm text-[var(--color-ink-muted)] italic">
-          Made for thinkers
+          For those who think
         </span>
       </div>
     </footer>

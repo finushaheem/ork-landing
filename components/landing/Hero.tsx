@@ -170,8 +170,9 @@ export default function Hero() {
 
         {/* Subhead */}
         <FadeUp delay={0.9} duration={0.6} y={20}>
-          <p className="font-sans text-lg md:text-xl text-[var(--color-ink-soft)] max-w-xl mx-auto mt-8">
-            Capture thoughts instantly. ork quietly turns your writing into context, memory, and action.
+          <p className="font-sans text-lg md:text-xl text-[var(--color-ink-soft)] max-w-xl mx-auto mt-8 leading-relaxed">
+            Write what&apos;s on your mind. ork reads between the lines — surfacing the tasks,
+            connections, and patterns your thinking already contains.
           </p>
         </FadeUp>
 
@@ -252,15 +253,20 @@ export default function Hero() {
           </div>
 
           {/* Trust line */}
-          <div className="mt-12 text-center opacity-60 flex flex-col items-center">
-            <p className="text-[10px] tracking-[0.25em] font-sans font-semibold text-[var(--color-ink-muted)] mb-4">
-              TRUSTED BY FOUNDERS, WRITERS, AND CREATORS AT
+          <div className="mt-12 text-center flex items-center justify-center gap-3">
+            <span
+              className="block w-1 h-1 rounded-full"
+              style={{ backgroundColor: "var(--color-accent)", opacity: 0.6 }}
+              aria-hidden="true"
+            />
+            <p className="text-xs font-sans text-[var(--color-ink-muted)]" style={{ opacity: 0.7 }}>
+              In early access &middot; Free to begin
             </p>
-            <div className="flex items-center justify-center gap-8 text-[var(--color-ink-muted)] text-sm font-medium tracking-wide">
-              <span>LINEAR</span>
-              <span>VERCEL</span>
-              <span>NOTION</span>
-            </div>
+            <span
+              className="block w-1 h-1 rounded-full"
+              style={{ backgroundColor: "var(--color-accent)", opacity: 0.6 }}
+              aria-hidden="true"
+            />
           </div>
         </FadeUp>
       </div>

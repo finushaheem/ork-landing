@@ -70,8 +70,9 @@ export default function ReflectSection() {
               variants={fadeUp}
               className="font-sans text-lg text-[var(--color-ink-soft)] leading-relaxed"
             >
-              Write without judgment. ork holds your words with care — and quietly
-              helps you see patterns you didn&apos;t know were there.
+              Write without judgment. ork holds your entries quietly — and over time,
+              shows you what keeps surfacing. The threads your mind returns to
+              without meaning to.
             </motion.p>
           </motion.div>
 
